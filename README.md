@@ -4,11 +4,7 @@ Trabajo Practico Programación Orientada a Objetos 1
 
 Nombres de los integrantes del grupo
 
-Alexander Suarez
-Gabriel Forneris
-Denisse Escalante
-Ezequiel
-Matias
+Alexander Suarez - Gabriel Forneris - Denisse Escalante - Ezequiel - Matias
 
 
 Decisiones de diseño tomadas: 
