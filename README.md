@@ -4,7 +4,7 @@ Trabajo Practico Programación Orientada a Objetos 1
 
 Nombres de los integrantes del grupo
 
-Alexander Suarez - Gabriel Forneris - Denisse Escalante - Ezequiel - Matias
+Alexander Suarez - Gabriel Forneris - Denisse Escalante - Ezequiel Gonzalez - Matias
 
 
 Decisiones de diseño tomadas: Se decidio realizar 2 clases donde tendremos los mayores cantidades de metodos a utilizar en el programa, por otro lado luego de codificarlo se penso en usar 2 clases extras para poder realizar el testeo en Junit y para realizar lo solicitado de mostrar en pantalla como funciona el programa.
