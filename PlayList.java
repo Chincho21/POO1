@@ -1,10 +1,18 @@
 package ar.edu.uno.poo1.tp1;
 
+import org.junit.Before;
+import org.junit.Test;
+
 public class PlayList {
 	
 	private static int maximo_canciones = 10000;
 	private static Cancion lista_canciones[] =  new Cancion[maximo_canciones];
 	private static int contador_canciones = 0;
+
+	@Before
+	public void setUp () throws Exception {
+		 lista_canciones =  new Cancion[maximo_canciones];
+		}
 	
 	
 	public static void main(String[] args) {
@@ -13,10 +21,10 @@ public class PlayList {
 
 			for(int i = 0; i <maximo_canciones; i++) {
 				if((GenerarNumeroAleatorio() % 2) == 0) {
-					AgregarCancionAlPlaylist("ACancion"+(i+1), GenerarNumeroAleatorio());
+					AgregarCancionAlPlaylist("CancionA"+(i+1), GenerarNumeroAleatorio());
 				}
 				else {
-					AgregarCancionAlPlaylist("BCancion"+(i+1), "Album"+(i+1), "Artista"+ (i+1), GenerarNumeroAleatorio());
+					AgregarCancionAlPlaylist("CancionB"+(i+1), "Album"+(i+1), "Artista"+ (i+1), GenerarNumeroAleatorio());
 				}
 			}
 
@@ -40,26 +48,29 @@ public class PlayList {
 		    System.out.println("Canción mayor duracion de la PlayList: " + DameCancionMayorDuracion());
 		    System.out.println("Canción menor duracion de la PlayList: " + DameCancionMenorDuracion());
 		    
-		    MostrarPlayListOrdenadoPorTituloCancion();
+	//	    MostrarPlayListOrdenadoPorTituloCancion();
 		    System.out.println("--------------------------------------------------------------");
-		    MostrarPlayListOrdenadoPorArtistaCancion();
+	//	    MostrarPlayListOrdenadoPorArtistaCancion();
 		    
 		
 	}
 	
 	//METODO PARA GENERAR UN NUMERO ALEATORIO
+
 	private static int GenerarNumeroAleatorio() {
 		int numero_aleatorio = (int)((Math.random()*10)+1);
 		return numero_aleatorio;
 	}
 	
 	//METODO PARA ASIGNAR UN MAXIMO PERMITIDO DE CANCIONES AL PROGRAMA (NUEVO)
+	
 	private static void AsignarMaximoPermitidoDeCanciones(int maximo_permitido) {
 		if(maximo_permitido <= 10000) {
 				maximo_canciones = maximo_permitido;
 		}
 	}
 	//METODO 1 PARA AGREGAR CANCION AL PLAYLIST (NUEVO)
+	
 	private static void AgregarCancionAlPlaylist(String titulo, int duracion){
 		if(contador_canciones < maximo_canciones){
 			lista_canciones[contador_canciones]= new Cancion(titulo,duracion);
@@ -68,6 +79,7 @@ public class PlayList {
 	}
 		
 	//METODO 2 PARA AGREGAR CANCION AL PLAYLIST (NUEVO)
+	
 	private static void AgregarCancionAlPlaylist(String titulo, String album, String artista,int duracion){
 		if(contador_canciones < maximo_canciones){
 			lista_canciones[contador_canciones]= new Cancion(titulo, album, artista, duracion);
@@ -128,6 +140,7 @@ public class PlayList {
 	}
 
 	//METODO 2 PARA QUITAR UNA CANCION EN EL PLAYLIST INGRESANDO TITULO (NUEVO)
+	
 	private static void QuitarCancionDelPlaylist(String ingrese_titulo) {
 			
 		int numero_pocision;
@@ -162,6 +175,7 @@ public class PlayList {
 	}
 		
 	//METODO PARA CONSULTAR LA DURACION DE UNA CANCION INGRESANDO TITULO(NUEVO)
+	
 	private static void ConsultarDuracionCancion(String titulo) {
 		
 		int vect_duraciones[] = new int[contador_canciones];
@@ -249,7 +263,8 @@ public class PlayList {
 	}
 		
 	//METODO PARA MOSTRAR EL PLAYSLIST ORDENADO POR TITULO DE CANCION (NUEVO)
-	private static void MostrarPlayListOrdenadoPorTituloCancion(){
+	@Test
+	public void MostrarPlayListOrdenadoPorTituloCancion(){
 		int min = 0;
 		int j = 0;
 		Cancion aux = new Cancion(" ", 0);
@@ -288,7 +303,8 @@ public class PlayList {
 	}
 		
 	//METODO PARA MOSTRAR EL PLAYSLIST ORDENADO POR ARTISTA DE CANCION (NUEVO)
-	private static void MostrarPlayListOrdenadoPorArtistaCancion(){
+	@Test
+	public void MostrarPlayListOrdenadoPorArtistaCancion(){
 		int min = 0;
 		int j = 0;
 		Cancion aux = new Cancion(" ", 0);
@@ -311,6 +327,5 @@ public class PlayList {
 		}
 			
 	}
-
 
 }
