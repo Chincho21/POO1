@@ -24,7 +24,7 @@ public class PlayList {
 					AgregarCancionAlPlaylist("CancionA"+(i+1), GenerarNumeroAleatorio());
 				}
 				else {
-					AgregarCancionAlPlaylist("CancionB"+(i+1), "Album"+(i+1), "Artista"+ (i+1), GenerarNumeroAleatorio());
+					AgregarCancionAlPlaylist("CancionB"+(i+1), "Album"+(i+1), "Artista", GenerarNumeroAleatorio());
 				}
 			}
 
@@ -34,21 +34,21 @@ public class PlayList {
 				System.out.println(lista_canciones[i].MostrarDatosGeneralesDeCancion());
 			}
 		    
-			QuitarCancionDelPlaylist("Cancion4");
+			QuitarCancionDelPlaylist("CancionA1");
 			QuitarCancionDelPlaylist(6);
 			
 			for( int i=0; i<contador_canciones; i++ ) {
 				System.out.println(lista_canciones[i].MostrarDatosGeneralesDeCancion());
 			}
 			
-		    ConsultarDuracionCancion("Cancion1");//BUSCADOR CANCIONES POR NOMBRE
+		    ConsultarDuracionCancion("CancionA2");//BUSCADOR CANCIONES POR NOMBRE
 		    
 		    System.out.println("Duracion completa del PlayList: " + DameDuracionCompletaPlayList() + " segundos.");
 		    System.out.println("Cantidad de canciones del PlayList: " + DameCantidadDeCanciones());
 		    System.out.println("Canción mayor duracion de la PlayList: " + DameCancionMayorDuracion());
 		    System.out.println("Canción menor duracion de la PlayList: " + DameCancionMenorDuracion());
 		    
-	//	    MostrarPlayListOrdenadoPorTituloCancion();
+		    MostrarPlayListOrdenadoPorTituloCancion();
 		    System.out.println("--------------------------------------------------------------");
 	//	    MostrarPlayListOrdenadoPorArtistaCancion();
 		    
@@ -196,7 +196,7 @@ public class PlayList {
 		    if(contador == contador_canciones) {
 		    	if(j != 0) {
 		    		for(int k = 0; k < j; k++) {
-		    			System.out.println(vect_duraciones[k]);
+		    	//		System.out.println(vect_duraciones[k]);
 		    		}
 		    	}
 		    	else {
@@ -263,8 +263,8 @@ public class PlayList {
 	}
 		
 	//METODO PARA MOSTRAR EL PLAYSLIST ORDENADO POR TITULO DE CANCION (NUEVO)
-	@Test
-	public void MostrarPlayListOrdenadoPorTituloCancion(){
+
+	public static void MostrarPlayListOrdenadoPorTituloCancion(){
 		int min = 0;
 		int j = 0;
 		Cancion aux = new Cancion(" ", 0);
@@ -283,16 +283,16 @@ public class PlayList {
 			lista_canciones[min] = aux;
 		}
 		
-		/*//INICIAMOS EL ORDENAMIENTO METODO BURBUJA (OPCIONAL)
+		//INICIAMOS EL ORDENAMIENTO METODO BURBUJA (OPCIONAL)
 		for(int i=1; i<=contador_canciones; i++) {  
 	        for(j = 0; j <contador_canciones-i; j++) { 
-	            if( lista_canciones[j].DameTitulo().compareTo( lista_canciones[j+1].DameTitulo() ) > 0 ) { 
+	            if( lista_canciones[j].DameArtista().compareTo( lista_canciones[j+1].DameArtista() ) > 0 ) { 
 	                aux   = lista_canciones[j]; 
 	                lista_canciones[j]  = lista_canciones[j+1]; 
 	                lista_canciones[j+1]= aux; 
 	            }    
 	        } 
-	    }*/
+	    }
 			
 		//AHORA MOSTRAMOS LA LISTA ORDENADA
 			
