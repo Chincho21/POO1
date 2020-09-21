@@ -26,29 +26,11 @@ public class PlayList {
 		}
 		
 		System.out.println("--------------------------------------------------------------");
-	    
-		//quitarCancionDelPlaylist("ACancion");
-		//quitarCancionDelPlaylist(6);
 		
-		/*for( int i=0; i<contador_canciones; i++ ) {
-			System.out.println(lista_canciones[i].dameDatosGeneralesDeCancion());
-		}
-		*/
+		//MOSTRAMOS EL PLAYLIST ORDENADO POR TITULO
 		
-		/*/consultarDuracionCancion("BCancion");//BUSCADOR CANCIONES POR NOMBRE
-		System.out.println("--------------------------------------------------------------");
-	    System.out.println("Duracion completa del PlayList: " + dameDuracionCompletaPlayList() + " segundos.");
-	    System.out.println("Cantidad de canciones del PlayList: " + dameCantidadDeCancionesPlayList());
-	    System.out.println("Canción mayor duracion de la PlayList: " + dameCancionMayorDuracionPlayList());
-	    System.out.println("Canción menor duracion de la PlayList: " + dameCancionMenorDuracionPlayList());
-	    */
-	    //mostrarPlayListOrdenadoPorTituloCancion();
+	    mostrarPlayListOrdenadoPorTituloCancion();
 	    System.out.println("--------------------------------------------------------------");
-	    
-	    //mostrarPlayListOrdenadoPorTituloCancion();
-	    System.out.println("--------------------------------------------------------------");
-	    
-	    //mostrarPlayListOrdenadoPorArtistaCancion();
 	    
 	}
 	
@@ -282,17 +264,6 @@ public class PlayList {
 				lista_canciones[min] = aux;
 			}
 			
-			//INICIAMOS EL ORDENAMIENTO METODO BURBUJA (OPCIONAL)
-			/*for(int i=1; i<=contador_canciones; i++) {  
-		        for(j = 0; j <contador_canciones-i; j++) { 
-		            if( lista_canciones[j].dameArtista().compareTo( lista_canciones[j+1].dameArtista() ) > 0 ) { 
-		                aux   = lista_canciones[j]; 
-		                lista_canciones[j]  = lista_canciones[j+1]; 
-		                lista_canciones[j+1]= aux; 
-		            }    
-		        } 
-		    }
-				*/
 			//AHORA MOSTRAMOS LA LISTA ORDENADA
 				
 			for(int i = 0; i < contador_canciones; i ++) {
