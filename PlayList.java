@@ -8,8 +8,10 @@ public class PlayList {
 	
 	public void iniciarPrograma() {
 		
-		asignarMaximoPermitidoDeCanciones(5);
-
+		//SE AGREGA CANCIONES AL PLAYLIST, SI PASAN LOS 10000 NO AGREGA NINGUNA		
+		asignarMaximoPermitidoDeCanciones(10);
+		
+		//SE RECORRE LA LISTA
 		for(int i = 0; i <maximo_canciones; i++) {
 			if((dameNumeroAleatorio() % 2) == 0) {
 				agregarCancionAlPlaylist("ACancion"+(dameNumeroAleatorio()), dameNumeroAleatorio());
@@ -19,15 +21,14 @@ public class PlayList {
 			}
 		}
 
-	    //MOSTRAR DATOS GENERALES POR CADA CANCION UTILIZANDO UN FOR [DESORDENADO] (OPCIONAL A MODO DE REALIZAR PRUEBAS)
-		
+	    //MOSTRAR DATOS GENERALES POR CADA CANCION UTILIZANDO UN FOR [DESORDENADO]
 		for( int i=0; i<contador_canciones; i++ ) {
 			System.out.println(lista_canciones[i].dameDatosGeneralesDeCancion());
 		}
 		
 		System.out.println("--------------------------------------------------------------");
 		
-		//MOSTRAMOS EL PLAYLIST ORDENADO POR TITULO
+		//MOSTRAMOS EL PLAYLIST ORDENADO POR TITULO Y ARTISTA
 		
 	    mostrarPlayListOrdenadoPorTituloCancion();
 	    System.out.println("--------------------------------------------------------------");
@@ -42,9 +43,15 @@ public class PlayList {
 		
 		//METODO PARA ASIGNAR UN MAXIMO PERMITIDO DE CANCIONES AL PROGRAMA (NUEVO)
 		public static void asignarMaximoPermitidoDeCanciones(int maximo_permitido) {
-			if(maximo_permitido <= 10000) {
-					maximo_canciones = maximo_permitido;
+			
+			if(maximo_canciones >= maximo_permitido) {
+				maximo_canciones = maximo_permitido;
 			}
+					else { 
+						maximo_permitido = 0;
+						maximo_canciones = maximo_permitido;
+					}	
+			
 		}
 		//METODO 1 PARA AGREGAR CANCION AL PLAYLIST (NUEVO)
 		public static void agregarCancionAlPlaylist(String titulo, int duracion){
